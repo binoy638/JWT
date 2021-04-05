@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8000;
 
 //Import Routes
 const authRoute = require("./routes/auth");
+const postRoute = require("./routes/posts");
 
 mongoose.connect(
   process.env.ATLAS_URL,
@@ -19,6 +20,7 @@ app.use(express.json());
 
 //Route Middlewars
 app.use("/api/user", authRoute);
+app.use("/api/posts", postRoute);
 
 // const posts = [
 //   {
