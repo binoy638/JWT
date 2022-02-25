@@ -1,5 +1,4 @@
 const express = require("express");
-// const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const app = express();
 const mongoose = require("mongoose");
@@ -21,30 +20,6 @@ app.use(express.json());
 //Route Middlewars
 app.use("/api/user", authRoute);
 app.use("/api/posts", postRoute);
-
-// const posts = [
-//   {
-//     username: "User1",
-//     title: "POST1",
-//   },
-//   {
-//     username: "User2",
-//     title: "POST2",
-//   },
-// ];
-
-// app.get("/posts", (req, res) => {
-//   res.json(posts);
-// });
-
-// app.post("/login", (req, res) => {
-//   //Authenticate User
-//   const {username} = req.body
-//   const user = {name:username}
-
-//   jwt.sign(user,)
-
-// });
 
 app.listen(PORT, () => {
   console.log(`listing to http://localhost:${PORT}`);
